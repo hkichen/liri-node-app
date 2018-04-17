@@ -12,13 +12,6 @@ for (var i = 3; i < process.argv.length; i++) {
     input += process.argv[i] + " ";
 };
 
-// Error Functions 
-function errorFunction(respError) {
-    if (respError) {
-        return console.log("Error: ", respError);
-     }
-};
-
 //Command Cases
 switch (command) {
     case "my-tweets":
@@ -67,21 +60,19 @@ function getTweets() {
 var spotify = require('spotify');
 function searchSong(input) {
     // Accesses Spotify keys  
-    var spotify = new Spotify(keys.spotify)
+    spotify = new Spotify(keys.spotify)
 
      // Default search value if no song is given
-     if (input == "") {
-        input = "Under the Iron Sea";
+     if (input == '') {
+        input = 'Under the Iron Sea';
     }
     // Searches Spotify with given values
-    spotify.search({ type: 'track', query: input, limit: searchLimit }, function(respError, response) {
-
-        fs.appendFile("log.txt", "-----Spotify Log Entry Start-----\nProcessed on:\n" + Date() + "\n\n" + "terminal commands:\n" + process.argv + "\n\n" + "Data Output: \n", errorFunctionStart());
-
-        errorFunction();
+    spotify.search({ type: 'track', query: input}, function(error) {
+        if (error) {
+            console.log(error)
+        };
 
         var songResp = response.tracks.items;
-
         for (var i = 0; i < songResp.length; i++) {
             console.log("\n=============== Spotify Search Result "+ (i+1) +" ===============\n");
             console.log(("Artist: " + songResp[i].artists[0].name));
@@ -89,11 +80,12 @@ function searchSong(input) {
             console.log(("Album name: " + songResp[i].album.name));
             console.log(("URL Preview: " + songResp[i].preview_url));
             console.log("\n=========================================================\n");
-
-            fs.appendFile("log.txt", "\n========= Result "+ (i+1) +" =========\nArtist: " + songResp[i].artists[0].name + "\nSong title: " + songResp[i].name + "\nAlbum name: " + songResp[i].album.name + "\nURL Preview: " + songResp[i].preview_url + "\n=============================\n", errorFunction());
         }
 
-        fs.appendFile("log.txt","-----Spotify Log Entry End-----\n\n", errorFunctionEnd());
-    })
-};
-
+        fs.appendFile("log.txt", "\n========= Result "+ (i+1) +" =========\nArtist: " + songResp[i].artists[0].name + "\nSong title: " + songResp[i].name + "\nAlbum name: " + songResp[i].album.name + "\nURL Preview: " + songResp[i].preview_url + "\n=============================\n", (error) =>{
+            if (error) {
+                console.log(error);
+            }
+        }
+    )}
+)};
