@@ -1,23 +1,22 @@
-require("dotenv").config();
+require('dotenv').config();
 var fs = require('fs'); 
 var request = require('request');
 var keys = require('./keys.js');
-var Twitter = require('twitter');
-//var Spotify = require('node-spotify-api');
 
-//var that grabs terminal commnads
+// Grabs the command from the terminal
 var command = process.argv[2];
-var input = '';
-//make user input into a string
-for (var i = 3; i < process.argv.length; i++) {
-    input += process.argv[i] + ' ';
-}
+var input = "";
 
-//error function
-function error(err) {
-    if (err) {
-        return console.log(err);
-    }
+// Puts together the search value into one string
+for (var i = 3; i < process.argv.length; i++) {
+    input += process.argv[i] + " ";
+};
+
+// Error Functions 
+function errorFunction(respError) {
+    if (respError) {
+        return console.log("Error: ", respError);
+     }
 };
 
 //Command Cases
@@ -35,28 +34,66 @@ switch (command) {
         randomSearch();
         break;
     default:
-        console.log("The command " + command + " is not one I recognize. Please try one of the following commands: my-tweets, spotify-this-song, movie-this, or do-what-it-says.");
+        console.log(command + " is not a command that I recognize. Try one of these commands: \n\n  1. For a random search: node liri.js do-what-it-says \n\n  2. To search a movie title: node liri.js movie-this (with a movie title following) \n\n  3. To search Spotify for a song: node liri.js spotify-this-song (*optional number for amount of returned results) (specify song title)\n     Example: node liri.js spotify-this-song 15 Candle in the Wind\n\n  4. To see the last 20 of Aidan Clemente's tweets on Twitter: node liri.js my-tweets \n");
 };
 
-
-///Twitter///
-//access the keys then...
-//get latest tweets from user Lina_khn//
-function getTweets(){
-    client = new Twitter(keys.twitter);
-    var parameters = {
-        name: 'Lina_khn',
+//=========Twitter Function=========//
+var Twitter = require('twitter');
+function getTweets() {
+    // Accesses Twitter Keys
+    var client = new Twitter(keys.twitter); 
+    var params = {
+        screen_name: 'LINA_khn',
         count: 20
-    };
+        };
 
-    fs.appendFile("log.txt", "-----Tweets Log Entry Start-----", errorFunctionStart());
-        console.log("-----Lina's Latest-----");
+    client.get('statuses/user_timeline', params, function(error, tweets, response) {
+        console.log("----------------");
+        for (var i = 0; i < tweets.length; i++) {
+            console.log(i + 1 + ". Tweet: ", tweets[i].text);
 
-    for (i = 0; i < tweets.length; i++) {
-        console.log(i + 1 + ". Tweet: ", tweets[i].text);
-    };
-
-    fs.appendFile("log.txt", "-----Tweets Log Entry End-----\n\n", errorFunctionEnd());
+            // For alingment once the number of the tweet is 10 or higher
+            if (i + 1 > 9) {
+                console.log("    Tweeted on: ", tweets[i].created_at + "\n");
+            } else {
+                console.log("   Tweeted on: ", tweets[i].created_at + "\n");
+            }        
+        };
+        console.log("--------------")
+    });
 };
 
+//=========Spotify Functions=========//
+var spotify = require('spotify');
+function searchSong(input) {
+    // Accesses Spotify keys  
+    var spotify = new Spotify(keys.spotify)
+
+     // Default search value if no song is given
+     if (input == "") {
+        input = "Under the Iron Sea";
+    }
+    // Searches Spotify with given values
+    spotify.search({ type: 'track', query: input, limit: searchLimit }, function(respError, response) {
+
+        fs.appendFile("log.txt", "-----Spotify Log Entry Start-----\nProcessed on:\n" + Date() + "\n\n" + "terminal commands:\n" + process.argv + "\n\n" + "Data Output: \n", errorFunctionStart());
+
+        errorFunction();
+
+        var songResp = response.tracks.items;
+
+        for (var i = 0; i < songResp.length; i++) {
+            console.log("\n=============== Spotify Search Result "+ (i+1) +" ===============\n");
+            console.log(("Artist: " + songResp[i].artists[0].name));
+            console.log(("Song title: " + songResp[i].name));
+            console.log(("Album name: " + songResp[i].album.name));
+            console.log(("URL Preview: " + songResp[i].preview_url));
+            console.log("\n=========================================================\n");
+
+            fs.appendFile("log.txt", "\n========= Result "+ (i+1) +" =========\nArtist: " + songResp[i].artists[0].name + "\nSong title: " + songResp[i].name + "\nAlbum name: " + songResp[i].album.name + "\nURL Preview: " + songResp[i].preview_url + "\n=============================\n", errorFunction());
+        }
+
+        fs.appendFile("log.txt","-----Spotify Log Entry End-----\n\n", errorFunctionEnd());
+    })
+};
 
