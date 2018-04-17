@@ -1,6 +1,8 @@
 require('dotenv').config();
 var fs = require('fs'); 
 var request = require('request');
+var Twitter = require('twitter');
+var spotify = require('spotify');
 var keys = require('./keys.js');
 
 // Grabs the command from the terminal
@@ -27,11 +29,10 @@ switch (command) {
         randomSearch();
         break;
     default:
-        console.log(command + " is not a command that I recognize. Try one of these commands: \n\n  1. For a random search: node liri.js do-what-it-says \n\n  2. To search a movie title: node liri.js movie-this (with a movie title following) \n\n  3. To search Spotify for a song: node liri.js spotify-this-song (*optional number for amount of returned results) (specify song title)\n     Example: node liri.js spotify-this-song 15 Candle in the Wind\n\n  4. To see the last 20 of Aidan Clemente's tweets on Twitter: node liri.js my-tweets \n");
+        console.log(command + " is not a command that I recognize. Try one of these commands: \n\n  1. For a random search: node liri.js do-what-it-says \n\n  2. To search a movie title: node liri.js movie-this (with a movie title following) \n\n  3. To search Spotify for a song: node liri.js spotify-this-song \n\n 4. To see the lastest 20 tweets on by Lina on Twitter: node liri.js my-tweets \n");
 };
 
 //=========Twitter Function=========//
-var Twitter = require('twitter');
 function getTweets() {
     // Accesses Twitter Keys
     var client = new Twitter(keys.twitter); 
@@ -57,13 +58,12 @@ function getTweets() {
 };
 
 //=========Spotify Functions=========//
-var spotify = require('spotify');
 function searchSong(input) {
     // Accesses Spotify keys  
     spotify = new Spotify(keys.spotify)
 
      // Default search value if no song is given
-     if (input == '') {
+     if (input === '') {
         input = 'Under the Iron Sea';
     }
     // Searches Spotify with given values
