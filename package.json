@@ -1,7 +1,7 @@
 {
   "name": "liri-node-app",
   "version": "1.0.0",
-  "description": "a command line app to get movie information and make twitter posts",
+  "description": "a command line app to get twitter posts, movie info, and song info",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/hkichen/liri-node-app/issues"
   },
-  "homepage": "https://github.com/hkichen/liri-node-app#readme"
+  "homepage": "https://github.com/hkichen/liri-node-app#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "twitter": "^1.7.1"
+  }
 }

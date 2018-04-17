@@ -1,9 +1,9 @@
-var dotenv = require("dotenv").config();
+require("dotenv").config();
 var fs = require('fs'); 
 var request = require('request');
 var keys = require('./keys.js');
 var Twitter = require('twitter');
-var Spotify = require('node-spotify-api');
+//var Spotify = require('node-spotify-api');
 
 //var that grabs terminal commnads
 var command = process.argv[2];
@@ -35,7 +35,7 @@ switch (command) {
         randomSearch();
         break;
     default:
-        console.log("The command " + command + " is not one I rocognize. Please try one of the following commands: my-tweets, spotify-this-song, movie-this, or do-what-it-says.");
+        console.log("The command " + command + " is not one I recognize. Please try one of the following commands: my-tweets, spotify-this-song, movie-this, or do-what-it-says.");
 };
 
 
@@ -49,11 +49,14 @@ function getTweets(){
         count: 20
     };
 
-    client.get('statuses/user_timeline', params, function(error, tweets, response) {
-        error();
-        console.log("-----------Lina's Tweets-----------");
-        for (i = 0; i < tweets.length; i++) {
-            console.log(i + 1 + '. Tweet: ', tweets[i].text);
-        }
-    }
-)};
+    fs.appendFile("log.txt", "-----Tweets Log Entry Start-----", errorFunctionStart());
+        console.log("-----Lina's Latest-----");
+
+    for (i = 0; i < tweets.length; i++) {
+        console.log(i + 1 + ". Tweet: ", tweets[i].text);
+    };
+
+    fs.appendFile("log.txt", "-----Tweets Log Entry End-----\n\n", errorFunctionEnd());
+};
+
+
