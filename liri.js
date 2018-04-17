@@ -2,7 +2,7 @@ require('dotenv').config();
 var fs = require('fs'); 
 var request = require('request');
 var Twitter = require('twitter');
-var spotify = require('spotify');
+var Spotify = require('node-spotify-api');
 var keys = require('./keys.js');
 
 // Grabs the command from the terminal
@@ -60,32 +60,26 @@ function getTweets() {
 //=========Spotify Functions=========//
 function searchSong(input) {
     // Accesses Spotify keys  
-    spotify = new Spotify(keys.spotify)
+    var spotify = new Spotify(keys.spotify)
 
      // Default search value if no song is given
      if (input === '') {
         input = 'Under the Iron Sea';
     }
     // Searches Spotify with given values
-    spotify.search({ type: 'track', query: input}, function(error) {
+    spotify.search({ type: 'track', query: input}, function(error, response) {
         if (error) {
             console.log(error)
         };
 
         var songResp = response.tracks.items;
         for (var i = 0; i < songResp.length; i++) {
-            console.log("\n=============== Spotify Search Result "+ (i+1) +" ===============\n");
+            console.log("\n===Spotify Search Result "+ (i+1) +"===\n");
             console.log(("Artist: " + songResp[i].artists[0].name));
             console.log(("Song title: " + songResp[i].name));
             console.log(("Album name: " + songResp[i].album.name));
             console.log(("URL Preview: " + songResp[i].preview_url));
-            console.log("\n=========================================================\n");
+            console.log("\n=============\n");
         }
-
-        fs.appendFile("log.txt", "\n========= Result "+ (i+1) +" =========\nArtist: " + songResp[i].artists[0].name + "\nSong title: " + songResp[i].name + "\nAlbum name: " + songResp[i].album.name + "\nURL Preview: " + songResp[i].preview_url + "\n=============================\n", (error) =>{
-            if (error) {
-                console.log(error);
-            }
-        }
-    )}
+    }
 )};
