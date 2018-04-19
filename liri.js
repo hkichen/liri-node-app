@@ -74,7 +74,7 @@ function searchSong(input) {
 
         var songResp = response.tracks.items;
         for (var i = 0; i < songResp.length; i++) {
-            console.log("\n===Spotify Search Result "+ (i+1) +"===\n");
+            console.log("\n===Spotify Results"+ (i+1) +"===\n");
             console.log(("Artist: " + songResp[i].artists[0].name));
             console.log(("Song title: " + songResp[i].name));
             console.log(("Album name: " + songResp[i].album.name));
@@ -83,3 +83,15 @@ function searchSong(input) {
         }
     }
 )};
+
+//==========OMDB Function==========//
+function searchMovie(input) {
+    //if no movie specified...get Mr. Nobody
+    if (input === "") {
+        input = "Mr. Nobody"
+    }
+
+
+
+}
+
