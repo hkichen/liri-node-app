@@ -91,7 +91,12 @@ function searchMovie(input) {
         input = "Mr. Nobody"
     }
 
+    //request info from omdb, use trim to remove extra spaces
+    var queryUrl = "http://www.omdbapi.com/?t=" + input.trim() + "&y=&plot=short&apikey=trilogy";
 
-
+    request(queryUrl, function(error, response, body) {
+        if (error) {
+            console.log('There was an error: ' + error);
+        }
 }
 
