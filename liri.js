@@ -74,7 +74,7 @@ function searchSong(input) {
 
         var songResp = response.tracks.items;
         for (var i = 0; i < songResp.length; i++) {
-            console.log("\n===Spotify Results"+ (i+1) +"===\n");
+            console.log("\n===Spotify Result "+ (i+1) +"===\n");
             console.log(("Artist: " + songResp[i].artists[0].name));
             console.log(("Song title: " + songResp[i].name));
             console.log(("Album name: " + songResp[i].album.name));
@@ -122,9 +122,11 @@ function searchMovie(input) {
 };
 
 //==========Do What It Says Function==========//
+//access the random text file, runs command in file
 function randomSearch() {
     fs.readFile("random.txt", "utf8", function(error, data) {
         var randomArr = data.split(', ');
+        console.log(randomArr);
         if (error) {
             console.log(error);
         }else  if (randomArr[0] === 'spotify-this-song'){
