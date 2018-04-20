@@ -89,6 +89,7 @@ function searchMovie(input) {
     //if no movie specified...get Mr. Nobody
     if (input === "") {
         input = "Mr. Nobody"
+        console.log ('If you have not watched "Mr. Nobody," check it out on Netflix!');
     }
 
     //request info from omdb, use trim to remove extra spaces
@@ -98,5 +99,24 @@ function searchMovie(input) {
         if (error) {
             console.log('There was an error: ' + error);
         }
-}
 
+        if (JSON.parse(body).Error == 'Movie not found!' ) {
+            console.log("Movie not found. Check your spelling or try a different title.");
+        } else {
+            movie = JSON.parse(body);
+            console.log(
+                '\n----OMDB Results----' +
+                '\nMovie Title: ' + movie.Title +
+                '\nYear: ' + movie.Year + 
+                '\nIMDB Rating: ' + movie.imdbRating + 
+                '\nRotten Tomatoes Rating: ' + movie.Ratings[[1]].Value + 
+                '\nProduced in: ' + movie.Country + 
+                '\nLanguage: ' + movie.Language + 
+                '\nPlot: ' + movie.Plot + 
+                '\nActors: ' + movie.Actors + 
+                '\n--------------------'
+            );
+        };
+
+    });
+};
