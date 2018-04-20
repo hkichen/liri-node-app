@@ -29,7 +29,9 @@ switch (command) {
         randomSearch();
         break;
     default:
-        console.log(command + " is not a command that I recognize. Try one of these commands: \n\n  1. For a random search: node liri.js do-what-it-says \n\n  2. To search a movie title: node liri.js movie-this (with a movie title following) \n\n  3. To search Spotify for a song: node liri.js spotify-this-song \n\n 4. To see the lastest 20 tweets on by Lina on Twitter: node liri.js my-tweets \n");
+        console.log(
+            "\n" + command + " is not a command that I recognize. Try one of these commands: \n 1. To see the lastest 20 tweets by Lina on Twitter: node liri.js my-tweets \n 2. To search Spotify for a song: node liri.js spotify-this-song \n 3. To search a movie title: node liri.js movie-this <enter movie title> \n 4. To do a random search: node liri.js do-what-it-says"
+        );
 };
 
 //=========Twitter Function=========//
@@ -63,26 +65,28 @@ function searchSong(input) {
     var spotify = new Spotify(keys.spotify)
 
      // Default search value if no song is given
-     if (input === '') {
+    if (input === '') {
         input = 'Under the Iron Sea';
     }
     // Searches Spotify with given values
-    spotify.search({ type: 'track', query: input}, function(error, response) {
+    spotify.search({ type: 'track', query: input, limit: 5}, function(error, response) {
         if (error) {
             console.log(error)
         };
 
-        var songResp = response.tracks.items;
-        for (var i = 0; i < songResp.length; i++) {
-            console.log("\n===Spotify Result "+ (i+1) +"===\n");
-            console.log(("Artist: " + songResp[i].artists[0].name));
-            console.log(("Song title: " + songResp[i].name));
-            console.log(("Album name: " + songResp[i].album.name));
-            console.log(("URL Preview: " + songResp[i].preview_url));
-            console.log("\n=============\n");
+        var song = response.tracks.items;
+        for (var i = 0; i < song.length; i++) {
+            console.log(
+                "\n===Spotify Result "+ (i+1) +"===\n" 
+                + "\nArtist: " + song[i].artists[0].name 
+                + "\nSong title: " + song[i].name 
+                +"\nAlbum name: " + song[i].album.name 
+                + "\nURL Preview: " + song[i].preview_url 
+                + "\n======================"
+            );
         }
-    }
-)};
+    })
+};
 
 //==========OMDB Function==========//
 function searchMovie(input) {
