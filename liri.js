@@ -120,3 +120,20 @@ function searchMovie(input) {
 
     });
 };
+
+//==========Do What It Says Function==========//
+function randomSearch() {
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        var randomArr = data.split(', ');
+        if (error) {
+            console.log(error);
+        }else  if (randomArr[0] === 'spotify-this-song'){
+            searchSong(randomArr[1]);
+        }else if (randomArr[0] === 'movie-this') {
+            searchMovie(randomArr[1]);
+        } else {
+            getTweets();
+        }
+    });
+};
+///This should be spotifying the song, but runs getTweets instead???
