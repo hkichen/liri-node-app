@@ -111,15 +111,20 @@ function searchSong(input) {
         var song = response.tracks.items;
         for (var i = 0; i < song.length; i++) {
             console.log(
-                "\n===Spotify Result "+ (i+1) +"===\n" 
+                "\n------Spotify Result "+ (i+1) +"------\n" 
                 + "\nArtist: " + song[i].artists[0].name 
                 + "\nSong title: " + song[i].name 
                 +"\nAlbum name: " + song[i].album.name 
                 + "\nURL Preview: " + song[i].preview_url 
-                + "\n======================"
+                + "\n------------------------------"
             );
 
-            fs.appendFile("log.txt", "\n========= Result "+ (i+1) +" =========\nArtist: " + song[i].artists[0].name + "\nSong title: " + song[i].name + "\nAlbum name: " + song[i].album.name + "\nURL Preview: " + song[i].preview_url + "\n=============================\n", function(error) {
+            fs.appendFile("log.txt", "\n-----------Result "+ (i+1) +" -----------\n" 
+            + "\nArtist: " + song[i].artists[0].name 
+            + "\nSong title: " + song[i].name 
+            + "\nAlbum name: " + song[i].album.name 
+            + "\nURL Preview: " + song[i].preview_url 
+            + "\n------------------------------\n", function(error) {
                 if (error){
                     console.log(error);
                 }
@@ -210,16 +215,6 @@ function randomSearch() {
     });
 };
 
-//=====Write to Log.txt file function
-
-function updateLog
-(){
-    fs.appendFile("log.txt", "-----Log Entry-----"
-    + "\nDate:\n" + Date() 
-    + "\nCommand:\n" + process.argv 
-    + "\nData Output: \n", function(error) {
-        if (error){
-            console.log(error);
-        }
-    })
-}
+//clear log.txt function?
+//var fs = require('fs')
+//fs.truncate('/path/to/file', 0, function(){console.log('done')})
