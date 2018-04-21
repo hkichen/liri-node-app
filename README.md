@@ -30,10 +30,10 @@ Type in these commands to run app:
 
 ## Captures
 Here are some screen shots of the app working:
-![Some Code](./images/liri1.png?raw=true "Some Code")
-![Spotify Results](./images/liri5.png)
-![Terminal results for Movie](./images/liri4.png)
-![Terminal Commands](./images/liri3.png)
+![Some Code](https://github.com/hkichen/liri-node-app/blob/master/images/liri1.PNG)
+![Spotify Results](https://github.com/hkichen/liri-node-app/blob/master/images/liri2.PNG)
+![Terminal results for Movie](https://github.com/hkichen/liri-node-app/blob/master/images/liri5.PNG)
+![Terminal Commands](https://github.com/hkichen/liri-node-app/blob/master/images/liri3.PNG)
 
 ## Focus
 - The function to clear data in the log.txt file still needs work; So far, inquirer runs, but the if-else statements do not; It doesn't seem to be reading the answer chosen from the prompt.
