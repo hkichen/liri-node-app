@@ -29,7 +29,8 @@ Type in these commands to run app:
     node liri.js do-what-it-says
 
 ##Screen Shots
-![alt text](../images/liri1.png)
+Here are some screen shots of the app working:
+![alt text](./images/liri1.png)
 
 
 
