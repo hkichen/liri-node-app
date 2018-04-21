@@ -97,7 +97,7 @@ function searchSong(input) {
     
     // Default search value if no song is given
     if (input === '') {
-        input = 'Under the Iron Sea';
+        input = 'The Sign Ace of Base';
     }
     // Searches Spotify with given values
     spotify.search({ type: 'track', query: input, limit: 5}, function(error, response) {

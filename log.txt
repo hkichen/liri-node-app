@@ -148,3 +148,141 @@ Language: English, French
 Plot: A family of undercover superheroes, while trying to live the quiet suburban life, are forced into action to save the world.
 Actors: Craig T. Nelson, Holly Hunter, Samuel L. Jackson, Jason Lee
 -----OMDB Log Entry End-----
+-----------------------------
+--------Spotify Data--------
+Processed on:
+Sat Apr 21 2018 09:52:50 GMT-0400 (Eastern Daylight Time)
+Command: C:\Program Files\nodejs\node.exe,C:\Users\hkich\liri-node-app\liri,spotify-this-song
+Song Info Below: 
+
+-----------Result 1 -----------
+
+Artist: Keane
+Song title: A Bad Dream
+Album name: Under The Iron Sea
+URL Preview: null
+------------------------------
+
+-----------Result 2 -----------
+
+Artist: Keane
+Song title: Nothing In My Way
+Album name: Under The Iron Sea
+URL Preview: null
+------------------------------
+
+-----------Result 4 -----------
+
+Artist: Keane
+Song title: Crystal Ball
+Album name: Under The Iron Sea
+URL Preview: null
+------------------------------
+
+-----------Result 5 -----------
+
+Artist: Keane
+Song title: The Frog Prince
+Album name: Under The Iron Sea
+URL Preview: null
+------------------------------
+
+-----------Result 3 -----------
+
+Artist: Keane
+Song title: Is It Any Wonder?
+Album name: Under The Iron Sea
+URL Preview: null
+------------------------------
+-----------------------------
+--------Spotify Data--------
+Processed on:
+Sat Apr 21 2018 09:54:52 GMT-0400 (Eastern Daylight Time)
+Command: C:\Program Files\nodejs\node.exe,C:\Users\hkich\liri-node-app\liri,spotify-this-song
+Song Info Below: 
+
+-----------Result 1 -----------
+
+Artist: Ty Dolla $ign
+Song title: Or Nah (feat. The Weeknd, Wiz Khalifa and DJ Mustard) - Remix
+Album name: Or Nah (feat. The Weeknd, Wiz Khalifa and DJ Mustard) [Remix Version]
+URL Preview: https://p.scdn.co/mp3-preview/70f126c139847335bc03c756c55b80c99892268e?cid=36455afe27274e0bace2052cacda83e3
+------------------------------
+
+-----------Result 4 -----------
+
+Artist: Harry Styles
+Song title: Sign of the Times
+Album name: Sign of the Times
+URL Preview: https://p.scdn.co/mp3-preview/9801b9239ad1b833f1317574ee55b9d7b8426ff1?cid=36455afe27274e0bace2052cacda83e3
+------------------------------
+
+-----------Result 2 -----------
+
+Artist: Ty Dolla $ign
+Song title: Love U Better (feat. Lil Wayne & The-Dream)
+Album name: Beach House 3
+URL Preview: https://p.scdn.co/mp3-preview/8917010fb6f1883ff95e85abf35428d98904f29b?cid=36455afe27274e0bace2052cacda83e3
+------------------------------
+
+-----------Result 3 -----------
+
+Artist: Harry Styles
+Song title: Sign of the Times
+Album name: Harry Styles
+URL Preview: https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=36455afe27274e0bace2052cacda83e3
+------------------------------
+
+-----------Result 5 -----------
+
+Artist: Jeremih
+Song title: Impatient
+Album name: Late Nights: The Album
+URL Preview: null
+------------------------------
+-----------------------------
+--------Spotify Data--------
+Processed on:
+Sat Apr 21 2018 10:00:19 GMT-0400 (Eastern Daylight Time)
+Command: C:\Program Files\nodejs\node.exe,C:\Users\hkich\liri-node-app\liri,spotify-this-song
+Song Info Below: 
+
+-----------Result 1 -----------
+
+Artist: Ace of Base
+Song title: The Sign
+Album name: The Sign (US Album) [Remastered]
+URL Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=36455afe27274e0bace2052cacda83e3
+------------------------------
+
+-----------Result 2 -----------
+
+Artist: Ace of Base
+Song title: All That She Wants
+Album name: The Sign (US Album) [Remastered]
+URL Preview: https://p.scdn.co/mp3-preview/b176774bc04182501c2d5d201afda143b1193f31?cid=36455afe27274e0bace2052cacda83e3
+------------------------------
+
+-----------Result 5 -----------
+
+Artist: Ace of Base
+Song title: Living in Danger
+Album name: The Sign (US Album) [Remastered]
+URL Preview: https://p.scdn.co/mp3-preview/2fbf2512dd61a32d9ddda5b55a3e89ad368521b4?cid=36455afe27274e0bace2052cacda83e3
+------------------------------
+
+-----------Result 4 -----------
+
+Artist: Ace of Base
+Song title: Don't Turn Around
+Album name: The Sign (US Album) [Remastered]
+URL Preview: https://p.scdn.co/mp3-preview/9c8401c8142bdd011e51f0211be2e2d4afcd5cff?cid=36455afe27274e0bace2052cacda83e3
+------------------------------
+
+-----------Result 3 -----------
+
+Artist: Ace of Base
+Song title: The Sign
+Album name: Greatest Hits
+URL Preview: https://p.scdn.co/mp3-preview/5ca0168d6b58e0f993b2b741af90ecc7c9b16893?cid=36455afe27274e0bace2052cacda83e3
+------------------------------
