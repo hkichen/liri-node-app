@@ -28,7 +28,7 @@ Type in these commands to run app:
 4. To run a random command from another file (random.text):
     node liri.js do-what-it-says
 
-##Screen Shots
+## Screen Shots
 Here are some screen shots of the app working:
 ![alt text](./images/liri1.png)
 
