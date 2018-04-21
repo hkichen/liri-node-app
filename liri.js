@@ -60,9 +60,9 @@ function getTweets() {
             console.log(i + 1 + ". Tweet: ", tweets[i].text);
             //make slight alignment fix to numbering
             if (i + 1 > 9) {
-                console.log("    Tweeted on: ", tweets[i].created_at + "\n");
+                console.log("    Tweeted on: ", tweets[i].created_at + "\n\n");
             } else {
-                console.log("   Tweeted on: ", tweets[i].created_at + "\n");
+                console.log("   Tweeted on: ", tweets[i].created_at + "\n\n");
             }
             
             //append tweets to log
@@ -143,6 +143,17 @@ function searchMovie(input) {
         if (error) {
             console.log('There was an error: ' + error);
         }
+        //append start of data to log.text
+        fs.appendFile("log.txt", "----------------------" 
+        + "\n------Movie Data------\n" 
+        + "Processed on:\n" + Date() 
+        + "\nCommand: " + process.argv 
+        + "\nMovie Info Below: \n", 
+        function(error){
+            if (error) {
+                console.log(error);
+            }
+        });
 
         if (JSON.parse(body).Error == 'Movie not found!' ) {
             console.log("Movie not found. Check your spelling or try a different title.");
@@ -160,6 +171,22 @@ function searchMovie(input) {
                 '\nActors: ' + movie.Actors + 
                 '\n--------------------'
             );
+
+            //Append movie info to log
+            fs.appendFile("log.txt", 
+            "Movie Title: " + movie.Title 
+            + "\nYear: " + movie.Year 
+            + "\nIMDB rating: " + movie.imdbRating 
+            + "\nRotten Tomatoes Rating: " + + movie.Ratings[[1]].Value 
+            + " \nCountry: " + movie.Country 
+            + "\nLanguage: " + movie.Language 
+            + "\nPlot: " + movie.Plot 
+            + "\nActors: " + movie.Actors 
+            + "\n-----OMDB Log Entry End-----\n", function(error) {
+                if (error) {
+                    console.log(error);
+                }
+            });
         };
 
     });

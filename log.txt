@@ -89,3 +89,47 @@ Song title: Feel Good Inc
 Album name: The Singles Collection 2001-2011
 URL Preview: https://p.scdn.co/mp3-preview/7388c425022ced92b1caa7f73bcf0cb3080aee47?cid=36455afe27274e0bace2052cacda83e3
 =============================
+-----------------------------
+--------Lina's Tweets--------
+Processed on:
+Fri Apr 20 2018 21:05:41 GMT-0400 (Eastern Daylight Time)
+Command: C:\Program Files\nodejs\node.exe,C:\Users\hkich\liri-node-app\liri,my-tweets
+-----------------------------
+1. Tweet: someone stop me, im a tweeting machine
+Tweeted on: Tue Apr 17 18:14:14 +0000 2018
+3. Tweet: I just want to build pretty things that work
+Tweeted on: Tue Apr 17 17:51:03 +0000 2018
+4. Tweet: Im hungry
+Tweeted on: Tue Apr 17 17:50:42 +0000 2018
+2. Tweet: "or worse, explelled!"
+Tweeted on: Tue Apr 17 17:51:15 +0000 2018
+6. Tweet: spamming my own page with meaningless words
+Tweeted on: Tue Apr 17 17:50:08 +0000 2018
+5. Tweet: not a fan of shouting into the internet void
+Tweeted on: Tue Apr 17 17:50:33 +0000 2018
+7. Tweet: Oh, man, tweet no.2
+Tweeted on: Tue Apr 17 17:49:43 +0000 2018
+8. Tweet: This is my first tweet ever. such wow.
+Tweeted on: Tue Apr 17 15:11:41 +0000 2018
+-----------------------------
+--------Lina's Tweets--------
+Processed on:
+Fri Apr 20 2018 21:07:35 GMT-0400 (Eastern Daylight Time)
+Command: C:\Program Files\nodejs\node.exe,C:\Users\hkich\liri-node-app\liri,my-tweets
+-----------------------------
+1. Tweet: someone stop me, im a tweeting machine
+Tweeted on: Tue Apr 17 18:14:14 +0000 2018
+3. Tweet: I just want to build pretty things that work
+Tweeted on: Tue Apr 17 17:51:03 +0000 2018
+2. Tweet: "or worse, explelled!"
+Tweeted on: Tue Apr 17 17:51:15 +0000 2018
+5. Tweet: not a fan of shouting into the internet void
+Tweeted on: Tue Apr 17 17:50:33 +0000 2018
+7. Tweet: Oh, man, tweet no.2
+Tweeted on: Tue Apr 17 17:49:43 +0000 2018
+8. Tweet: This is my first tweet ever. such wow.
+Tweeted on: Tue Apr 17 15:11:41 +0000 2018
+6. Tweet: spamming my own page with meaningless words
+Tweeted on: Tue Apr 17 17:50:08 +0000 2018
+4. Tweet: Im hungry
+Tweeted on: Tue Apr 17 17:50:42 +0000 2018
