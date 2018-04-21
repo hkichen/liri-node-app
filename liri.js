@@ -1,5 +1,6 @@
 require('dotenv').config();
 var fs = require('fs'); 
+var inquirer = require("inquirer");
 var request = require('request');
 var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
@@ -28,10 +29,19 @@ switch (command) {
     case "do-what-it-says":
         randomSearch();
         break;
+    case "cleanup":
+        clearData();
+        break;
     default:
-        console.log(
-            "\n" + command + " is not a command that I recognize. Try one of these commands: \n 1. To see the lastest 20 tweets by Lina on Twitter: node liri.js my-tweets \n 2. To search Spotify for a song: node liri.js spotify-this-song \n 3. To search a movie title: node liri.js movie-this <enter movie title> \n 4. To do a random search: node liri.js do-what-it-says"
-        );
+    console.log(
+        "\n" + command + " is not a command that I recognize. Try one of these commands: "+ "\n 1. To see the lastest 20 tweets by Lina on Twitter: " 
+        + "node liri.js my-tweets" 
+        + "\n 2. To search Spotify for a song: " + "node liri.js spotify-this-song" 
+        + "\n 3. To search a movie title: node liri.js movie-this <enter movie title>" 
+        + "\n 4. To do a random search: node liri.js do-what-it-says" 
+        + "\n 5. To clean up data in the log: " 
+        + "node liri.js cleanup"
+    );
 };
 
 //=========Twitter Function=========//
@@ -41,19 +51,19 @@ function getTweets() {
     var params = {
         screen_name: 'LINA_khn',
         count: 20
-        };
-
+    };
+    
     //append data to log
     fs.appendFile("log.txt", "-----------------------------" 
-        + "\n--------Lina's Tweets--------\n" 
-        + "Processed on:\n" + Date() 
-        + "\nCommand: " + process.argv 
-        + "\n-----------------------------\n", 
-        function(error){
-            if (error) {
-                console.log(error);
-            }
-        });
+    + "\n--------Lina's Tweets--------\n" 
+    + "Processed on:\n" + Date() 
+    + "\nCommand: " + process.argv 
+    + "\n-----------------------------\n", 
+    function(error){
+        if (error) {
+            console.log(error);
+        }
+    });
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
         console.log("-----------------------------");
         for (var i = 0; i < tweets.length; i++) {
@@ -76,7 +86,7 @@ function getTweets() {
             });
         };
         console.log("-----------------------------")
-
+        
     });
 };
 
@@ -84,8 +94,8 @@ function getTweets() {
 function searchSong(input) {
     // Accesses Spotify keys  
     var spotify = new Spotify(keys.spotify)
-
-     // Default search value if no song is given
+    
+    // Default search value if no song is given
     if (input === '') {
         input = 'Under the Iron Sea';
     }
@@ -94,7 +104,7 @@ function searchSong(input) {
         if (error) {
             console.log(error)
         };
-
+        
         //append start of data to log.text
         fs.appendFile("log.txt", "-----------------------------" 
         + "\n--------Spotify Data--------\n" 
@@ -106,7 +116,7 @@ function searchSong(input) {
                 console.log(error);
             }
         });
-
+        
         //make variable to store response
         var song = response.tracks.items;
         for (var i = 0; i < song.length; i++) {
@@ -118,7 +128,7 @@ function searchSong(input) {
                 + "\nURL Preview: " + song[i].preview_url 
                 + "\n------------------------------"
             );
-
+            
             fs.appendFile("log.txt", "\n-----------Result "+ (i+1) +" -----------\n" 
             + "\nArtist: " + song[i].artists[0].name 
             + "\nSong title: " + song[i].name 
@@ -140,10 +150,10 @@ function searchMovie(input) {
         input = "Mr. Nobody"
         console.log ('If you have not watched "Mr. Nobody," check it out on Netflix!');
     }
-
+    
     //request info from omdb, use trim to remove extra spaces
     var queryUrl = "http://www.omdbapi.com/?t=" + input.trim() + "&y=&plot=short&apikey=trilogy";
-
+    
     request(queryUrl, function(error, response, body) {
         if (error) {
             console.log('There was an error: ' + error);
@@ -159,7 +169,7 @@ function searchMovie(input) {
                 console.log(error);
             }
         });
-
+        
         if (JSON.parse(body).Error == 'Movie not found!' ) {
             console.log("Movie not found. Check your spelling or try a different title.");
         } else {
@@ -176,7 +186,7 @@ function searchMovie(input) {
                 '\nActors: ' + movie.Actors + 
                 '\n--------------------'
             );
-
+            
             //Append movie info to log
             fs.appendFile("log.txt", 
             "Movie Title: " + movie.Title 
@@ -193,7 +203,7 @@ function searchMovie(input) {
                 }
             });
         };
-
+        
     });
 };
 
@@ -215,6 +225,33 @@ function randomSearch() {
     });
 };
 
-//clear log.txt function?
-//var fs = require('fs')
+//clear log.txt function? Try..
 //fs.truncate('/path/to/file', 0, function(){console.log('done')})
+// or 
+//fs.writeFile('/path/to/file', '', function(){console.log('done')})
+
+function clearData() {
+    if (command === "cleanup") {
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "confirm",
+                message: "Are you sure you want to clear the log?",
+                choices: ["Yes", "No"],
+            }
+        ]).then(function(answer) {
+            if (answer.choices === "Yes") {
+                console.log("Clearing Data");
+                fs.writeFile("./log.txt", 0, function(error) {
+                    if (error) {
+                        console.log(error);
+                    }else {
+                        console.log('done');   
+                    }
+                })
+            }else if (answer.choices === "No") {
+                console.log("Alrighty. What else can I help you with?")
+            }
+        })
+    }
+}
