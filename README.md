@@ -30,7 +30,10 @@ Type in these commands to run app:
 
 ## Captures
 Here are some screen shots of the app working:
-![alt text](./images/liri1.png)
+![Some Code](./images/liri1.png)
+![Spotify Results](./images/liri5.png)
+![Terminal results for Movie](./images/liri4.png)
+![Terminal Commands](./images/liri3.png)
 
 
 
