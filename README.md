@@ -42,7 +42,7 @@ Terminal Results for a Movie Search
 Example of Incorrect Command:
 ![Terminal Commands](https://github.com/hkichen/liri-node-app/blob/master/images/liri3.PNG)
 
-## Focus
+## Still in the works...
 - The function to clear data in the log.txt file still needs work; So far, inquirer runs, but the if-else statements do not; It doesn't seem to be reading the answer chosen from the prompt.
 
 
