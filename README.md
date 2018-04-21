@@ -29,10 +29,17 @@ Type in these commands to run app:
     node liri.js do-what-it-says
 
 ## Captures
-Here are some screen shots of the app working:
+Here are some screen shots of the app working...
+Switch Case for commands:
 ![Some Code](https://github.com/hkichen/liri-node-app/blob/master/images/liri1.PNG)
+
+Spotify Searcch Results:
 ![Spotify Results](https://github.com/hkichen/liri-node-app/blob/master/images/liri2.PNG)
+
+Terminal Results for a Movie Search
 ![Terminal results for Movie](https://github.com/hkichen/liri-node-app/blob/master/images/liri5.PNG)
+
+Example of Incorrect Command:
 ![Terminal Commands](https://github.com/hkichen/liri-node-app/blob/master/images/liri3.PNG)
 
 ## Focus
