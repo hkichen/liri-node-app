@@ -11,19 +11,25 @@ This is a command line app that takes in spefic commands and outputs data from T
 - OMDB: By request url (http://www.omdbapi.com/?apikey=[yourkey]&)
 
 ## Usage
-
+This app runs in your terminal.
 Type in these commands to run app:
 1. To get my latest tweets:
     node liri.js my-tweets
+- This command will grab the lastest 20 tweets from my twitter page
 
 2. To spotify a song:
     node liri.js spotify-this-song (enter a song name)
+- This will grab the first 5 matches to the title of the song and print out album information
 
 3. To get movie info:
     node liri.js movie-this (enter a movie title)
+- This will provide you with movie information (name, year, actors, languages, etc)
 
-4. To run a random command from anothe file (random.text):
+4. To run a random command from another file (random.text):
     node liri.js do-what-it-says
+
+##Screen Shots
+![alt text](../images/liri1.png)
 
 
 
