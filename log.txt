@@ -1,0 +1,91 @@
+-----Spotify Data-----
+Processed on:
+Fri Apr 20 2018 20:52:29 GMT-0400 (Eastern Daylight Time)
+Command: C:\Program Files\nodejs\node.exe,C:\Users\hkich\liri-node-app\liri,spotify-this-song,Pokerface
+Song Info: 
+-----Spotify Data-----
+Processed on:
+Fri Apr 20 2018 20:52:29 GMT-0400 (Eastern Daylight Time)
+Command: C:\Program Files\nodejs\node.exe,C:\Users\hkich\liri-node-app\liri,spotify-this-song,Pokerface
+Song Info: 
+-----Spotify Data-----
+Processed on:
+Fri Apr 20 2018 20:54:13 GMT-0400 (Eastern Daylight Time)
+Command: C:\Program Files\nodejs\node.exe,C:\Users\hkich\liri-node-app\liri,spotify-this-song,Pokerface
+Song Info: 
+
+========= Result 1 =========
+Artist: Usher
+Song title: Moving Mountains - POKERFACE REMIX
+Album name: 12" Masters - The Essential Mixes
+URL Preview: https://p.scdn.co/mp3-preview/5fae66497e02b1b21a207f14f1d6231793197093?cid=36455afe27274e0bace2052cacda83e3
+=============================
+
+========= Result 3 =========
+Artist: Justin Timberlake
+Song title: SexyBack - Pokerface Remix
+Album name: SexyTracks: The SexyBack Remixes
+URL Preview: https://p.scdn.co/mp3-preview/d5fe5b80e6b964019cc3089573a51726e48dbc39?cid=36455afe27274e0bace2052cacda83e3
+=============================
+
+========= Result 2 =========
+Artist: Madagascar 5
+Song title: Pokerface
+Album name: Pokerface Hits
+URL Preview: https://p.scdn.co/mp3-preview/dcd146ccaafb80ba38b963f95d0eeeabe4123764?cid=36455afe27274e0bace2052cacda83e3
+=============================
+
+========= Result 4 =========
+Artist: Less Than Jake
+Song title: Handshake Meets Pokerface
+Album name: Gnv Fla
+URL Preview: https://p.scdn.co/mp3-preview/9e3b409d906dd45420b2a23c1b2ef39e6b427e52?cid=36455afe27274e0bace2052cacda83e3
+=============================
+
+========= Result 5 =========
+Artist: Ghostface Killah
+Song title: Pokerface
+Album name: More Fish
+URL Preview: null
+=============================
+----------------------
+-----Spotify Data-----
+Processed on:
+Fri Apr 20 2018 20:57:47 GMT-0400 (Eastern Daylight Time)
+Command: C:\Program Files\nodejs\node.exe,C:\Users\hkich\liri-node-app\liri,spotify-this-song,Feel,Good,Inc
+Song Info Below: 
+
+========= Result 1 =========
+Artist: Gorillaz
+Song title: Feel Good Inc
+Album name: Demon Days
+URL Preview: https://p.scdn.co/mp3-preview/7388c425022ced92b1caa7f73bcf0cb3080aee47?cid=36455afe27274e0bace2052cacda83e3
+=============================
+
+========= Result 3 =========
+Artist: Gorillaz
+Song title: Feel Good Inc
+Album name: Feel Good Inc EP
+URL Preview: https://p.scdn.co/mp3-preview/7388c425022ced92b1caa7f73bcf0cb3080aee47?cid=36455afe27274e0bace2052cacda83e3
+=============================
+
+========= Result 4 =========
+Artist: Scott Bradlee's Postmodern Jukebox
+Song title: Feel Good Inc.
+Album name: Fake Blues
+URL Preview: https://p.scdn.co/mp3-preview/6befba8f95a9e21441ba28e8cd810cb6980c1c74?cid=36455afe27274e0bace2052cacda83e3
+=============================
+
+========= Result 2 =========
+Artist: filous
+Song title: Feel Good Inc.
+Album name: Feel Good Inc.
+URL Preview: https://p.scdn.co/mp3-preview/733f2d37bde814f97dd490a6afbdfe40bdd43edf?cid=36455afe27274e0bace2052cacda83e3
+=============================
+
+========= Result 5 =========
+Artist: Gorillaz
+Song title: Feel Good Inc
+Album name: The Singles Collection 2001-2011
+URL Preview: https://p.scdn.co/mp3-preview/7388c425022ced92b1caa7f73bcf0cb3080aee47?cid=36455afe27274e0bace2052cacda83e3
+=============================

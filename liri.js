@@ -43,19 +43,40 @@ function getTweets() {
         count: 20
         };
 
+    //append data to log
+    fs.appendFile("log.txt", "-----------------------------" 
+        + "\n--------Lina's Tweets--------\n" 
+        + "Processed on:\n" + Date() 
+        + "\nCommand: " + process.argv 
+        + "\n-----------------------------\n", 
+        function(error){
+            if (error) {
+                console.log(error);
+            }
+        });
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
-        console.log("----------------");
+        console.log("-----------------------------");
         for (var i = 0; i < tweets.length; i++) {
             console.log(i + 1 + ". Tweet: ", tweets[i].text);
-
-            // For alingment once the number of the tweet is 10 or higher
+            //make slight alignment fix to numbering
             if (i + 1 > 9) {
                 console.log("    Tweeted on: ", tweets[i].created_at + "\n");
             } else {
                 console.log("   Tweeted on: ", tweets[i].created_at + "\n");
-            }        
+            }
+            
+            //append tweets to log
+            fs.appendFile("log.txt", (i + 1) 
+            + ". Tweet: " + tweets[i].text 
+            + "\nTweeted on: " + tweets[i].created_at 
+            + "\n", function(error) {
+                if (error) {
+                    console.log(error);
+                }
+            });
         };
-        console.log("--------------")
+        console.log("-----------------------------")
+
     });
 };
 
@@ -75,10 +96,11 @@ function searchSong(input) {
         };
 
         //append start of data to log.text
-        fs.appendFile("log.txt", "-----Spotify Data-----\n" 
+        fs.appendFile("log.txt", "-----------------------------" 
+        + "\n--------Spotify Data--------\n" 
         + "Processed on:\n" + Date() 
         + "\nCommand: " + process.argv 
-        + "\nSong Info: \n", 
+        + "\nSong Info Below: \n", 
         function(error){
             if (error) {
                 console.log(error);
@@ -97,7 +119,7 @@ function searchSong(input) {
                 + "\n======================"
             );
 
-            fs.appendFile("log.txt", "\n========= Result "+ (i+1) +" =========\nArtist: " + songResp[i].artists[0].name + "\nSong title: " + songResp[i].name + "\nAlbum name: " + songResp[i].album.name + "\nURL Preview: " + songResp[i].preview_url + "\n=============================\n", function(error) {
+            fs.appendFile("log.txt", "\n========= Result "+ (i+1) +" =========\nArtist: " + song[i].artists[0].name + "\nSong title: " + song[i].name + "\nAlbum name: " + song[i].album.name + "\nURL Preview: " + song[i].preview_url + "\n=============================\n", function(error) {
                 if (error){
                     console.log(error);
                 }
