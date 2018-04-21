@@ -59,7 +59,7 @@ function getTweets() {
     });
 };
 
-//=========Spotify Functions=========//
+//=========Spotify Function=========//
 function searchSong(input) {
     // Accesses Spotify keys  
     var spotify = new Spotify(keys.spotify)
@@ -74,6 +74,18 @@ function searchSong(input) {
             console.log(error)
         };
 
+        //append start of data to log.text
+        fs.appendFile("log.txt", "-----Spotify Data-----\n" 
+        + "Processed on:\n" + Date() 
+        + "\nCommand: " + process.argv 
+        + "\nSong Info: \n", 
+        function(error){
+            if (error) {
+                console.log(error);
+            }
+        });
+
+        //make variable to store response
         var song = response.tracks.items;
         for (var i = 0; i < song.length; i++) {
             console.log(
@@ -84,6 +96,12 @@ function searchSong(input) {
                 + "\nURL Preview: " + song[i].preview_url 
                 + "\n======================"
             );
+
+            fs.appendFile("log.txt", "\n========= Result "+ (i+1) +" =========\nArtist: " + songResp[i].artists[0].name + "\nSong title: " + songResp[i].name + "\nAlbum name: " + songResp[i].album.name + "\nURL Preview: " + songResp[i].preview_url + "\n=============================\n", function(error) {
+                if (error){
+                    console.log(error);
+                }
+            })
         }
     })
 };
@@ -142,3 +160,17 @@ function randomSearch() {
         }
     });
 };
+
+//=====Write to Log.txt file function
+
+function updateLog
+(){
+    fs.appendFile("log.txt", "-----Log Entry-----"
+    + "\nDate:\n" + Date() 
+    + "\nCommand:\n" + process.argv 
+    + "\nData Output: \n", function(error) {
+        if (error){
+            console.log(error);
+        }
+    })
+}
