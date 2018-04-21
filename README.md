@@ -31,9 +31,10 @@ Type in these commands to run app:
 ## Captures
 Here are some screen shots of the app working:
 ![Some Code](/images/liri1.png?raw=true "Some Code")
-![Spotify Results](./images/liri5.png)
+![Spotify Results](liri5.png)
 ![Terminal results for Movie](./images/liri4.png)
 ![Terminal Commands](./images/liri3.png)
+
 
 
 
