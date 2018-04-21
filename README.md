@@ -1,4 +1,4 @@
-# liri-node-app
+# Liri Nope App
 
 Your Wish is My Command:
 This is a command line app that takes in spefic commands and outputs data from Twitter, Spotify, and OMDB. Please install all node packages before running the program
@@ -30,10 +30,14 @@ Type in these commands to run app:
 
 ## Captures
 Here are some screen shots of the app working:
-![Some Code](/images/liri1.png?raw=true "Some Code")
-![Spotify Results](liri5.png)
+![Some Code](./images/liri1.png?raw=true "Some Code")
+![Spotify Results](./images/liri5.png)
 ![Terminal results for Movie](./images/liri4.png)
 ![Terminal Commands](./images/liri3.png)
+
+## Focus
+- The function to clear data in the log.txt file still needs work; So far, inquirer runs, but the if-else statements do not; It doesn't seem to be reading the answer chosen from the prompt.
+
 
 
 
